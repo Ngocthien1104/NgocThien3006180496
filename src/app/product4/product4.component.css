@@ -1,0 +1,62 @@
+.head{
+    margin: 40px;
+}
+.card p{
+    display: inline;
+    padding: 15px;
+}
+.H5{
+    margin-top:20px;
+    margin-bottom: 20px;
+    font-size:30px;
+    font-weight: bold;
+}
+#Img1 img{
+    width: 200px;
+    height: 80px;
+    border: 1px solid rgb(247, 241, 241);
+}#Img1 button{
+    margin: 5px;
+    font-size: 10px;
+    font-weight: bold;
+}
+.fa-plus{
+    color: white;
+}
+.fa-minus{
+    color: white;
+}
+#Img2 img{
+    width: 90px;
+    height: 85px;
+    border: 1px solid rgb(218, 216, 216);
+}
+#Img2 button{
+    margin: 5px;
+    font-size: 10px;
+    font-weight: bold;
+}
+#Img3 img{
+    width: 150px;
+    height: 80px; 
+    border: 1px solid rgb(218, 216, 216);
+}
+#Img3 button{
+    margin: 5px;
+    font-size: 10px;
+    font-weight: bold;
+}
+#Img4 img{
+    width: 150px;
+    height: 80px;
+    border: 1px solid rgb(218, 216, 216);
+}
+#Img4 button{
+    margin: 5px;
+    font-size: 10px;
+    font-weight: bold; 
+}
+.test{
+    border: 2px solid black;
+    border-collapse: collapse;
+}

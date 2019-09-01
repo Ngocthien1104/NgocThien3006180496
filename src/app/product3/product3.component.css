@@ -1,0 +1,133 @@
+.product3{
+    margin: 40px;
+}
+.content-left{
+    background-color: black;
+    height: 700px;
+    width: 275px;
+}
+.fa-bars{
+    padding: 10px;
+    color: white;
+    position: relative;
+    float: right;
+    font-size:40px;
+}
+.logo p{
+    border-radius: 5px;
+    text-align: center;
+    font-size: 50px;
+    width: 70px;
+    font-weight: bold;
+    background: rgb(3 , 34 , 65);
+    color: white;
+    margin-left: 110px;
+    position: relative;
+    top: 50px;
+}
+.logo h5{
+    position: relative;
+    color: gray;
+    left: 100px;
+    top:40px;
+}
+.container{
+    margin-top: 50px;
+}
+.container i{
+    padding-left: 10px;
+    padding-top: 30px;
+    display: block;
+    color: antiquewhite;
+}
+.container i p{
+    position:relative;
+    left: 20%;
+    bottom: 2px;
+    display: inline;
+}
+.content-center p{
+    position: absolute;
+    float: left;
+    display: unset;
+}
+.content-center{
+    position: relative;
+    margin-left: 23%;
+    bottom: 680px;
+}
+.head-left{
+    position: relative;
+    width: 75%;
+    margin-left: 22%;
+    bottom: 600px;
+}
+.dropdown button{
+    background: white;
+    color: black;
+}
+input{
+    border-radius: 20px;
+    border: 1px solid deepskyblue;
+}
+.fa-search-plus{
+  position: relative;
+  left: 30px;
+}
+.collapse{
+    position: relative;
+    margin-left: 35%;
+}
+.collapse button{
+    background-color: dodgerblue;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.fa-info{
+    color: green;
+}
+.fa-pen{
+    color: blue;
+}
+.fa-trash{
+    color: red;
+}
+#icon i{
+    margin-left: 20px;
+}
+.table{
+    position: relative;
+    margin-left: 23%;
+    width: 76%;
+    bottom: 550px;
+    border: none;
+}
+.table th,td{
+    text-align: center;
+}
+.nav{
+    position: relative;
+    width: 78%;
+    margin-left: 23%;
+    bottom: 500px;
+}
+.nav a{
+    color: black;
+}
+.button-right{
+    margin-left: 60%;
+    background: white;
+    border: 2px solid black;
+}
+.button-right button{
+    background-color: rgb(177, 176, 176);
+    z-index: -1;
+    border: 0px;
+    border-radius: 0px;
+    color: white;
+}
+.button-right button:hover{
+    background-color: blue;
+}
+
