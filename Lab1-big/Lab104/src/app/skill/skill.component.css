@@ -1,0 +1,20 @@
+.left
+{
+    background-color: black;
+    
+}
+.left p
+{
+    margin-left: 60px;
+    color: gray;
+}
+.row img
+{
+    width: 50px;
+    height: 50px;
+    margin-left: 70px;
+}
+.nav-item
+{
+    color: white;
+}
