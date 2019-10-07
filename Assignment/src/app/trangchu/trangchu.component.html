@@ -1,0 +1,44 @@
+<div class="container">
+    <img src="../../assets/images/banner.png" width="100%">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" [routerLink]="['']">NThien</a>
+        <a class="navbar-brand" [routerLink]="['/thitracnghiem']">Thi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="['/tranggioithieu']">Giới Thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/tranglienhe']">Liên Hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/tranggopy']">Góp Ý</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/tranghoidap']">Hỏi Đáp</a>
+                </li>
+            </ul>
+                        
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tài khoản
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" [routerLink]="['/trangdangky']">Đăng ký</a>
+                <a class="dropdown-item" [routerLink]="['/trangdangnhap']">Đăng nhập</a>
+                <a class="dropdown-item" [routerLink]="['']">Quên mật khẩu</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" [routerLink]="['']">Đăng xuất</a>
+                <a class="dropdown-item" [routerLink]="['/trangdoimatkhau']">Đổi mật khẩu</a>
+                <a class="dropdown-item" [routerLink]="['/trangsuadoitaikhoan']">Cập nhật tài khoản</a>
+            </div>
+        </div>
+    </nav>
+
+</div>

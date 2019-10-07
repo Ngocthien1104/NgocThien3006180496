@@ -1,0 +1,54 @@
+<app-trangchu></app-trangchu>
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col">
+                        <label>Tên</label>
+                        <input type="text" class="form-control" placeholder="Tên của bạn" required name="">
+                    </div>
+                    <div class="col">
+                        <label>Họ</label>
+                        <input type="text" class="form-control" placeholder="Họ của bạn" required name="">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Email của bạn" required name="">
+            </div>
+            <div class="form-group">
+                <label>Mật khẩu</label>
+                <input type="password" class="form-control" placeholder="Password của bạn" required name="">
+            </div>
+            <div class="form-group">
+                <label>Nơi sống</label>
+                <select class="form-control">
+                    <option value="" selected>Nơi sống của bạn</option>
+                    <option value="">TPHCM</option>
+                    <option value="">Hà Nội</option>
+                    <option value="">Khác</option>
+                </select>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Nam">
+                <label class="form-check-label" for="inlineRadio1">Nam</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Nữ">
+                <label class="form-check-label" for="inlineRadio2">Nữ</label>
+              </div>           
+            <div class="form-group">
+                <input type="checkbox" required name="">
+                <label>Tôi đồng ý điều khoản sử dụng</label>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">Đăng Ký</button>
+            </div>
+        </div>
+        <div class="col-3">
+            <app-danhmucmonhoc></app-danhmucmonhoc>
+        </div>
+    </div>
+</div>
