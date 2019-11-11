@@ -1,0 +1,49 @@
+<app-trangchu></app-trangchu>
+<div class="container">
+    <div class="card" *ngIf='!finished'>
+        <div class="card-header">
+            <i class="fa fa-th-list"></i> {{subjectForId.Id}}
+        </div>
+        <div class="card-body">
+            <span *ngFor='let q of question | paginate: { itemsPerPage: itemPerPage, currentPage: currentPage }'>
+                <span class="question">{{currentPage}}. {{q.Text}}</span>
+            </span><br>
+            <hr>
+            <div class="form-check" *ngFor='let a of answer'>
+                <input class="form-check-input" type="radio" [(ngModel)]="correctAns" [ngModelOptions]="{standalone: true}"
+                    value="{{a.Id}}">
+                <label class="form-check-label" for="exampleRadios1">
+                    {{a.Text}}
+                </label>
+            </div>
+        </div>
+        <div class="card-header">
+            <span style="float: left">Question: {{currentPage}} of {{totalPage}}</span>
+            <span style="float: right"><button type="submit" class="btn btn-sm btn-info"
+                    (click)='finish()'>Finish</button></span>
+        </div>
+    </div>
+    
+    <nav aria-label="Page navigation example" style="float: right;" *ngIf='!finished'>
+        <ul class="pagination">
+            <li class="page-link" (click)='first()'><i class="fa fa-arrow-up"></i></li>
+            <li class="page-link" (click)='previous()'><i class="fa fa-arrow-left"></i></li>
+            <li class="page-link" (click)='next()'><i class="fa fa-arrow-right"></i></li>
+            <li class="page-link" (click)='last()'><i class="fa fa-arrow-down"></i></li>
+        </ul>
+    </nav>
+    <div *ngIf='finished'>
+        <div class="card-header">
+            Finish
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Bạn muốn kết thúc bài kiểm tra?</h5>
+            <hr>
+    
+            <button type="submit" class="btn btn-primary">Có</button>
+            <button type="submit" style="margin-left: 10px" class="btn btn-primary" (click)='yesNoQuestion()'>Không</button>
+    
+    
+        </div>
+    </div>
+</div>

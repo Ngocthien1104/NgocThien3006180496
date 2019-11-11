@@ -3,29 +3,37 @@
   <div class="row">
     <div class="col-9">
       <div class="jumbotron">
-
-
-        <div class="card-deck" *ngFor="let s of Subject | paginate: { itemsPerPage: 1, currentPage: 2}">
-          <div class="card">
-            <img src="../../assets/images/logos/{{s.Logo}}" class="card-img-center" width="100%" height="80%">
-            <div class="card-body">
-              <h5 class="card-title">{{s.Name}}</h5>
-              <p class="card-text">{{s.Id}}</p>
-
+        <div class="row">
+          <div class="col-6">
+            <div class="card-deck"
+              *ngFor="let s of Subject | paginate: { itemsPerPage: ipp, currentPage: cp} ; odd as isOdd">
+              <div class="card" *ngIf="isOdd">
+                <a><img src="../../assets/images/logos/{{s.Logo}}" class="card-img-center" width="70%" height="50%"></a>
+                <div class="card-body">
+                  <a [routerLink]="['/test',s.Id]"><h5 class="card-title" >{{s.Name}}</h5></a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card" *ngFor="let s of Subject | paginate: { itemsPerPage: 3, currentPage: 4}">
-            <img src="../../assets/images/logos/{{s.Logo}}" class="card-img-center" width="100%" height="80%">
-            <div class="card-body">
-              <h5 class="card-title">{{s.Name}}</h5>
-              <p class="card-text-center">{{s.Id}}</p>
-
+          <div class="col-6">
+            <div class="card-deck"
+              *ngFor="let s of Subject | paginate: { itemsPerPage: ipp, currentPage: cp} ;even as isEven">
+              <div class="card" *ngIf="isEven">
+                <a><img src="../../assets/images/logos/{{s.Logo}}" class="card-img-center" width="70%" height="50%"></a>
+                <div class="card-body">
+                  <a [routerLink]="['/test',s.Id]">
+                    <h5 class="card-title" >{{s.Name}}</h5>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+
         <br>
         <div class="text-center">
-          <button type="button" class="btn btn-default btn-sm" (click)="First">
+          <button type="button" class="btn btn-default btn-sm" (click)="First()">
             <span class="glyphicon glyphicon-circle-arrow-up"></span>
           </button>
           <button type="button" class="btn btn-default btn-sm" (click)="Previous()">

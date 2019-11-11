@@ -1,20 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-
-@Component({
-  selector: 'app-thitracnghiem',
-  templateUrl: './thitracnghiem.component.html',
-  styleUrls: ['./thitracnghiem.component.css']
-})
-export class ThitracnghiemComponent implements OnInit {
-    
- 
-  constructor() { }
-  ipp = 4;
-  cp=1;
-  totalPage : number;
-  page:any;
-  Subject= [
+[
     {
         "id" : 1,
         "Id": "ADAV",
@@ -136,30 +120,3 @@ export class ThitracnghiemComponent implements OnInit {
         "Logo": "WEBU.jpg"
     }
 ]
- ngOnInit() {
-    this.totalPage=Math.ceil(this.Subject.length / this.ipp)
-    
-  }
-
-  NextPage()
-  {
-    if(this.cp<this.totalPage)
-    this.cp++;
-  }
-  Previous()
-  {
-    if(this.cp>0)
-    {
-      this.cp--;
-    }
-  }
-  First()
-  {
-    this.cp=1;
-  }
-  Last()
-  {
-    this.cp=this.totalPage;
-  }
-
-}

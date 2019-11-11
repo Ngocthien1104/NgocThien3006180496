@@ -1,29 +1,67 @@
 <app-trangchu></app-trangchu>
 <div class="container">
-   <div class="row">
-       <div class="col-9">
-        <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  <div class="row">
+    <div class="col-9">
+      <div class="card-body" *ngIf='!checklogin'>
+        <h1 class="mb-4 text-center font-weight-400">Đăng Nhập</h1>
+        <div class="row no-gutters">
+          <div class="col-12 pr-0 col-sm mr-sm-2">
+            <a href="https://www.facebook.com/v2.10/dialog/oauth?client_id=1716503328561474&amp;state=8fff8a9f8f3728b3c7aaa3915025626d&amp;response_type=code&amp;sdk=php-sdk-5.7.0&amp;redirect_uri=https%3A%2F%2Fwww.codehub.vn%2Foauth%2Ffacebook&amp;scope=email%2Cpublic_profile"
+              title="Đăng Nhập Bằng Facebook" class="btn btn-lg btn-block btn-facebook" role="button">
+              <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 2 18 18"></svg>
+              <button class="btn btn-primary">Facebook</button>
+            </a>
+          </div>
+          <div class="col-12 pr-0 col-sm">
+            <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;redirect_uri=https%3A%2F%2Fwww.codehub.vn%2Foauth%2Fgoogle&amp;client_id=360294398202-u2ks84dfk6eled460d7uf2956dpca3qa.apps.googleusercontent.com&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&amp;access_type=online&amp;approval_prompt=auto"
+              title="Đăng Nhập Bằng Google" class="btn btn-lg btn-block btn-google" role="button">
+              <svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewBox="0 0 18 18">
+              </svg>
+              <button class="btn btn-danger">Google</button>
+            </a>
+          </div>
+        </div>
+        <div class="text-center text-muted my-3">Đã có tài khoản?</div>
+        <form method="POST"><input name="_token" type="hidden" value="mnIi125xToPxRQOtSZ1u9pTnDoSO5yGfRrCcwU9C">
+          <div class="form-group">
+            <label for="email">Email <span class="text-danger">*</span></label>
+            <input class="form-control" id="email" placeholder="Email" name="email" type="text"
+              [(ngModel)]="userNameCheck" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+            <label for="password">Mật Khẩu <span class="text-danger">*</span></label>
+            <input class="form-control" id="password" placeholder="Mật khẩu" name="password" type="password"
+              [(ngModel)]="passWordCheck" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group clearfix">
+            <div class="form-check d-inline-block">
+              <input type="checkbox" name="remember" class="form-check-input" id="remember">
+              <label class="form-check-label" for="remember">Ghi nhớ</label>
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="row">
-              <div class="col-6">
-                <a type="submit" class="btn btn-primary" [routerLink]="['/thitracnghiem']">Submit</a>
-                <a href="" class="btn btn-link"> Forgot your password ?</a>
-              </div>
-              
-            </div>
-          </form>
-   </div>
-   <div class="col-3">
-       <app-danhmucmonhoc></app-danhmucmonhoc>
-   </div>
-</div>
+            <a href="" title="Quên Mật Khẩu" class="float-right text-muted">Quên
+              mật khẩu ?</a>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block" (click)='checkLogin()'>Đăng Nhập</button>
+        </form>
+      </div>
+      <div class="card finish" *ngIf='checklogin'>
+        <div class="card-header title">
+          Login
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote">
+           <h3> <p class="mb-0">Đăng Nhập Thành Công</p></h3>
+          </blockquote>
+          <hr>
+          <button class="btn btn-primary btn-block" [routerLink]="['/thitracnghiem']">Thi</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-3">
+      <app-danhmucmonhoc></app-danhmucmonhoc>
+    </div>
+  </div>
 </div>
 <router-outlet></router-outlet>

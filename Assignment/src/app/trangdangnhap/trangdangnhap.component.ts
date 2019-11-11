@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {StudentsService} from '../students-service.service';
+
 
 @Component({
   selector: 'app-trangdangnhap',
@@ -7,43 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrangdangnhapComponent implements OnInit {
 
-  student=[
-    
   
-    {
-        "username": "teonv",
-        "password": "iloveyou",
-        "fullname": "Nguyễn Văn Tèo",
-        "email": "teonv@fpt.edu.vn",
-        "gender": "true",
-        "birthday": "1995-12-21",
-        "schoolfee": "1500000",
-        "marks": "0"
-    },
-    {
-        "username": "pheonv",
-        "password": "iloveyou",
-        "fullname": "Nguyễn Văn Chí Phèo",
-        "email": "pheonv@fpt.edu.vn",
-        "gender": "true",
-        "birthday": "1985-10-11",
-        "schoolfee": "2500000",
-        "marks": "0"
-    },
-    {
-        "username": "nopt",
-        "password": "iloveyou",
-        "fullname": "Phạm Thị Nở",
-        "email": "nopt@fpt.edu.vn",
-        "gender": "false",
-        "birthday": "1993-05-15",
-        "schoolfee": "2000000",
-        "marks": "0"
-    }
-  ]
-  constructor() { }
+  constructor( private http:HttpClient, private stu:StudentsService) { }
+  url ='./assets/Students.json';
+  checklogin:boolean=false;
+  successLogin:any;
+  userNameCheck:any;
+  passWordCheck:any;
+  students:any;
+  newStudent:any
 
   ngOnInit() {
+    this.getStudents().subscribe(data =>{
+      this.students = data;
+    })
+    this.newStudent = this.stu.getStudent();
+    console.log(this.students) 
+    
   }
+  getStudents(){
+    return this.http.get(this.url)
+  }
+  checkLogin(){
+    for(var student of this.students){
+      if((this.userNameCheck === student.username) && (this.passWordCheck === student.password)){
+        this.checklogin = true
+      }
+    }
 
+    for(var student of this.newStudent){
+      if((this.userNameCheck === student.username) && (this.passWordCheck === student.password)){
+        this.checklogin = true
+      }
+    }
+  }
 }
